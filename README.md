@@ -1,3 +1,6 @@
+![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+
+
 # Open Process Engine (Workflow 1)
 Mini Aspen kernel yang modular dan terbuka: baca flowsheet JSON, validasi, solve neraca, hasil terstruktur (JSON), siap disambungkan ke UI/AI/exporter.
 ## Goals (MVP 1-3 minggu)
