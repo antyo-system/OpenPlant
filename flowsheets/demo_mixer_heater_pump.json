@@ -1,0 +1,69 @@
+{
+  "id": "demo_mixer_heater_pump",
+  "name": "Demo: Mixer + Heater + Pump",
+  "streams": [
+    {
+      "id": "S1",
+      "name": "Feed A",
+      "mass_flow_kg_s": 1.0,
+      "comp": { "H2O": 1.0 },
+      "T_K": 298.15,
+      "P_Pa": 101325
+    },
+    {
+      "id": "S2",
+      "name": "Feed B",
+      "mass_flow_kg_s": 0.5,
+      "comp": { "H2O": 1.0 },
+      "T_K": 330.15,
+      "P_Pa": 120000
+    },
+    {
+      "id": "S3",
+      "name": "Mixed",
+      "mass_flow_kg_s": 0.1,
+      "comp": { "H2O": 1.0 },
+      "T_K": 300.0,
+      "P_Pa": 101325
+    },
+    {
+      "id": "S4",
+      "name": "Heated",
+      "mass_flow_kg_s": 0.1,
+      "comp": { "H2O": 1.0 },
+      "T_K": 300.0,
+      "P_Pa": 101325
+    },
+    {
+      "id": "S5",
+      "name": "Pressurized",
+      "mass_flow_kg_s": 0.1,
+      "comp": { "H2O": 1.0 },
+      "T_K": 300.0,
+      "P_Pa": 101325
+    }
+  ],
+  "units": [
+    {
+      "id": "U1",
+      "type": "mixer",
+      "inlets": ["S1", "S2"],
+      "outlets": ["S3"],
+      "params": {}
+    },
+    {
+      "id": "U2",
+      "type": "heater",
+      "inlets": ["S3"],
+      "outlets": ["S4"],
+      "params": { "dT_K": 20, "cp_kj_kg_k": 4.18 }
+    },
+    {
+      "id": "U3",
+      "type": "pump",
+      "inlets": ["S4"],
+      "outlets": ["S5"],
+      "params": { "dP_Pa": 200000, "efficiency": 0.7, "rho_kg_m3": 1000 }
+    }
+  ]
+}
